@@ -47,6 +47,7 @@ export const Signin = () => {
                   ).then((response)=>{
                     console.log(response)
                     navigate('/dashboard')})
+                  localStorage.clear()
                   localStorage.setItem('token', response.data.token)
                   localStorage.setItem('firstName', response.data.firstName)
                   localStorage.setItem('lastName', response.data.lastName)

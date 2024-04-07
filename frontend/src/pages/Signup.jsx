@@ -63,7 +63,7 @@ export const Signup = () => {
                   ).then((response)=>{
                     console.log(response)
                     navigate('/dashboard')})
-                  
+                  localStorage.clear()
                   localStorage.setItem('token', response.data.token)
                   localStorage.setItem('firstName', firstName)
                   localStorage.setItem('lastName', lastName)
