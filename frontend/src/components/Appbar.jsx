@@ -6,7 +6,7 @@ export const Appbar = () => {
         </div>
         <div className="flex">
             <div className="flex flex-col justify-center h-full mr-4">
-                Hello {localStorage.getItem("firstName")+localStorage.getItem("lastName")}
+                Hello {localStorage.getItem("firstName")+" "+localStorage.getItem("lastName")}
             </div>
         </div>
     </div>

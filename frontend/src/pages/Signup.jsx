@@ -63,7 +63,8 @@ export const Signup = () => {
                   )
                   alert('transaction successful')
                   localStorage.setItem('token', response.data.token)
-                  localStorage.setItem('username', username)
+                  localStorage.setItem('firstName', firstName)
+                  localStorage.setItem('lastName', lastName)
                   navigate('/dashboard')
                 }}
                 label={'Sign up'}
