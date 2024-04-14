@@ -31,45 +31,33 @@ const userSchema = new mongoose.Schema({
         trim: true,
         maxLength: 50
     },
-    bookedBlood: [String]
+    bookedBlood: [String],
+    address: {
+        type: String,
+        required: true,
+        trim: true,
+        maxLength: 100
+    }
 });
 
 const bloodSchema = new mongoose.Schema({
-    bloodId:{
-        type: Number,
-        required : true
+    bloodDoner:{
+        type: String,
+        required: true,
+        trim: true,
+        maxLength: 50
     },
-    A_positive: {
-        type: Number,
-        required : true
+    bloodGroup: {
+        type: String,
+        required: true,
+        trim: true,
+        maxLength: 50
     },
-    A_negative: {
-        type: Number,
-        required : true
-    },
-    B_positive: {
-        type: Number,
-        required : true
-    },
-    B_negative: {
-        type: Number,
-        required : true
-    },
-    O_positive: {
-        type: Number,
-        required : true
-    },
-    O_negative: {
-        type: Number,
-        required : true
-    },
-    AB_positive: {
-        type: Number,
-        required : true
-    },
-    AB_negative: {
-        type: Number,
-        required : true
+    address:{
+        type: String,
+        required: true,
+        trim: true,
+        maxLength: 100
     }
 });
 

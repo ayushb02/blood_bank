@@ -12,7 +12,8 @@ const signupBody = zod.object({
     username: zod.string().email(),
 	firstName: zod.string(),
 	lastName: zod.string(),
-	password: zod.string()
+	password: zod.string(),
+    address: zod.string()
 })
 
 router.post("/signup", async (req, res) => {
@@ -38,6 +39,7 @@ router.post("/signup", async (req, res) => {
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
+        address: req.body.address
     })
     const userId = user._id;
 
@@ -79,7 +81,8 @@ router.post("/signin", async (req, res) => {
         res.json({
             token: token,
             firstName: user.firstName,
-            lastName: user.lastName
+            lastName: user.lastName,
+            address: user.address
         })
         return;
     }

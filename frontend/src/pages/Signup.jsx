@@ -12,6 +12,7 @@ export const Signup = () => {
   const [lastName, setLastName] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [address, setAddress] = useState('');
   const navigate = useNavigate()
 
   return (
@@ -49,6 +50,13 @@ export const Signup = () => {
               placeholder='123456'
               label={'Password'}
             />
+            <InputBox
+              onChange={(e) => {
+                setAddress(e.target.value)
+              }}
+              placeholder='1-D, Hawkings Street'
+              label={'Address'}
+            />
             <div className='pt-4'>
               <Button
                 onClick={async () => {
@@ -59,6 +67,7 @@ export const Signup = () => {
                       firstName,
                       lastName,
                       password,
+                      address
                     }
                   ).then((response)=>{
                     console.log(response)
@@ -66,6 +75,7 @@ export const Signup = () => {
                     localStorage.setItem('token', response.data.token)
                     localStorage.setItem('firstName', firstName)
                     localStorage.setItem('lastName', lastName)
+                    localStorage.setItem('address',response.data.address)
                     navigate('/dashboard')
                     })
                   
