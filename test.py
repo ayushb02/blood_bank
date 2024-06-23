@@ -1,7 +1,5 @@
-a = 60
+a=1
+b=2
 
-b = 70
-
-c = a + d
-
+c=a+d
 print(c)
